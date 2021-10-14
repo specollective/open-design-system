@@ -6,8 +6,8 @@
 >>> <details>
 >>>  <summary>1. Create a project directory</summary>
 >>>
->>>> 1.1- `mkdir <projectname>`  
->>>> 1.2- `cd <projectname>`
+>>>> 1.1- `mkdir spec-ods`  
+>>>> 1.2- `cd spec-ods`
 >>> </details>
 >>> <details>
 >>>  <summary>2. Initialize the stencil</summary>
@@ -24,7 +24,7 @@
 >>>>  <summary>3.1- Create <code>component</code> directory</summary>
 >>>>
 >>>>> ``` 
->>>>> mkdir src/components/my-accordion
+>>>>> mkdir src/components/my-button
 >>>>> ``` 
 >>>> </details>
 >>>> <details>
@@ -34,11 +34,11 @@
 >>>>>  <summary>3.2.1- Create <code>component.tsx</code></summary>
 >>>>>
 >>>>>> ``` 
->>>>>> touch src/components/my-accordion/my-accordion.tsx
+>>>>>> touch src/components/my-button/my-button.tsx
 >>>>>> ``` 
 >>>>> </details>  
 >>>>> <details>
->>>>>  <summary>3.2.2- <code>my-accordion.tsx</code></summary>
+>>>>>  <summary>3.2.2- <code>my-button.tsx</code></summary>
 >>>>>
 >>>>>> ``` 
 >>>>>> import { Component, State, EventEmitter, Event, Prop, h } from '@stencil/core';
