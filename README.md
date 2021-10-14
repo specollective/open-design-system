@@ -12,7 +12,7 @@
 >>> <details>
 >>>  <summary>2. Initialize the stencil</summary>
 >>>
->>>> 2.1- Run `npm init`  
+>>>> 2.1- Run `npm init stencil`  
 >>>> 2.2- Choose the `component` option  
 >>>> 2.3- Name your project  
 >>>> 2.4- Run `npm install`
