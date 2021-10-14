@@ -1,7 +1,90 @@
 # SPEC-Open-Design-Project
+> ## About
+>> - Module published at `spec-ods`  
+>> <details>
+>>  <summary>Use instructions</summary>
+>>
+>>> 1. Run `npm install spec-ods` from the root of your project directory  
+>>> <details>
+>>>  <summary>2. Framework use</summary>
+>>>
+>>>> <details>
+>>>>  <summary><b>React</b></summary>
+>>>>
+>>>>> <details>
+>>>>>  <summary>1. Import Middleware into <code>index.js</code></summary>
+>>>>>
+>>>>>> ``` 
+>>>>>> import React from 'react';
+>>>>>> import ReactDOM from 'react-dom';
+>>>>>> import './index.css';
+>>>>>> import App from './App';
+>>>>>> import reportWebVitals from './reportWebVitals';
+>>>>>> 
+>>>>>> import { applyPolyfills, defineCustomElements } from 'spec-ods/loader'
+>>>>>> 
+>>>>>> // ... //
+>>>>>> 
+>>>>>> reportWebVitals();
+>>>>>> 
+>>>>>> applyPolyfills().then(() => {
+>>>>>>   defineCustomElements(window)
+>>>>>> })
+>>>>>> ``` 
+>>>>> </details>
+>>>>> <details>
+>>>>>  <summary>2. Import the component into your React component</summary>
+>>>>>
+>>>>>> ``` 
+>>>>>> import React from 'react';
+>>>>>> import './App.css';
+>>>>>> import 'spec-ods';
+>>>>>> 
+>>>>>> 
+>>>>>> function App() {
+>>>>>> 
+>>>>>>   const array = [
+>>>>>>     {
+>>>>>>       label: 'Accordion 1',
+>>>>>>       description: 'Lorem ipsum',
+>>>>>>       color: '#439ECA',
+>>>>>>       width: '300px'
+>>>>>>     },
+>>>>>>     {
+>>>>>>       label: 'Accordion 2',
+>>>>>>       description: 'Lorem ipsum',
+>>>>>>       color: '#7EC74A',
+>>>>>>       width: '300px'
+>>>>>>     },
+>>>>>>     {
+>>>>>>       label: 'Accordion 3',
+>>>>>>       description: 'Lorem ipsum',
+>>>>>>       color: '#F8CD41',
+>>>>>>       width: '300px'
+>>>>>>     }
+>>>>>>   ]
+>>>>>>   return (
+>>>>>>     <div className="App">
+>>>>>>       {
+>>>>>>         array.map((array) => {
+>>>>>>           return (
+>>>>>>             <accordion-button 
+>>>>>>             label={array.label}
+>>>>>>             description={array.description}
+>>>>>>             color={array.color}
+>>>>>>             width={array.width}>
+>>>>>>             </accordion-button>
+>>>>>>           )})
+>>>>>>       }
+>>>>>>     </div>
+>>>>>>   );
+>>>>>> }
+>>>>>> 
+>>>>>> export default App;
+>>>>>> ``` 
 > ## Steps
 >> <details>
->>  <summary>Steps taken</summary>
+>>  <summary>Steps taken to create the component(s)</summary>
 >>
 >>> <details>
 >>>  <summary>1. Create a project directory</summary>
