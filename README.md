@@ -4,7 +4,7 @@
 >> <details>
 >>  <summary>Use instructions</summary>
 >>
->>> 1. Run `npm install spec-ods` from the root of your project directory  
+>>> 1. Run `npm install spec-ods --save` from the root of your project directory  
 >>> <details>
 >>>  <summary>2. Framework use</summary>
 >>>
