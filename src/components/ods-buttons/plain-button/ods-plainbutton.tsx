@@ -1,4 +1,4 @@
-import { Component, State, Method, Prop, h } from '@stencil/core'
+import { Component, h } from '@stencil/core'
 
 @Component({
   tag: 'plain-button',
@@ -6,15 +6,15 @@ import { Component, State, Method, Prop, h } from '@stencil/core'
   shadow: true
 })
 
-
 export class PlainButton {
 
-  @Prop() name: string
 
   render() {
     return (
       <div>
-        <button>{this.name}</button>
+        <button class="plainjane">
+          <slot />
+        </button>
       </div>
     )
   }
