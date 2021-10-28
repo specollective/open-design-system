@@ -3,6 +3,11 @@ import { Config } from '@stencil/core';
 export const config: Config = {
   namespace: 'spec-ods',
   outputTargets: [
+    reactOutputTarget({
+      componentCorePackage: 'component-library',
+      proxiesFile: '../component-library-react/src/components.ts',
+      includeDefineCustomElements: true,
+    }),
     {
       type: 'dist',
       esmLoaderPath: '../loader',

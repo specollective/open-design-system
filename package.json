@@ -1,7 +1,7 @@
 {
   "name": "spec-ods",
   "version": "0.0.7",
-  "description": "Stencil Component Starter",
+  "description": "An open design framework produced by S.P.E.C.",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
   "es2015": "dist/esm/index.mjs",
@@ -26,6 +26,7 @@
     "link": "^0.1.5"
   },
   "devDependencies": {
+    "@stencil/react-output-target": "^0.1.0",
     "@types/jest": "^26.0.24",
     "jest": "^26.6.3",
     "jest-cli": "^26.6.3",
