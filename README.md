@@ -1,4 +1,40 @@
-# SPEC-Open-Design-Project
+# SPEC Open Design System
+
+🚧 This code is actively under development and should be considered unstable.
+
+This repository contains the code for SPEC's Open Design System (ODS). The goal of ODS is to coherently organize design patterns and best practices to support development of user interfaces that are accessible, inclusive, and ergonomic. ODS should provide pattern libraries, design languages, style guides, coded components, brand languages, and supporting documentation. Our hope is that ODS will serve as a reference and source of truth that helps SPEC and other organizations design and build digital products.
+
+Currently, ODS is being used in React-based projects at SPEC as an npm package. There are plans in the future to include setup instructions for Vue, Angular, and other JavaScript frameworks. If you are interested in using ODS in your project feel free to create an issue, open a pull request or reach out to us at info@specollective.org.
+
+# Quick Start for Create React App
+
+1. Install the npm package
+```
+npm install spec-ods
+```
+
+2. Add the set up code to the `index.js` file
+
+```JavaScript
+import { applyPolyfills, defineCustomElements } from 'spec-ods/loader'
+import 'spec-ods'
+
+applyPolyfills().then(() => {
+  defineCustomElements(window)
+})
+```
+
+3. Use custom element in your code
+
+```
+function ExampleButton () {
+  return (
+    <plain-button>Click me!</plain-button>
+  )
+}
+```
+# Detailed instructions
+
 > ## About
 >> - Module published at `spec-ods`  
 >> <details>
