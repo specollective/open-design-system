@@ -26,6 +26,10 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface OdsTableBasic {
+        "class": string;
+        "headless": boolean;
+    }
     interface PlainButton {
     }
 }
@@ -42,6 +46,12 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLOdsTableBasicElement extends Components.OdsTableBasic, HTMLStencilElement {
+    }
+    var HTMLOdsTableBasicElement: {
+        prototype: HTMLOdsTableBasicElement;
+        new (): HTMLOdsTableBasicElement;
+    };
     interface HTMLPlainButtonElement extends Components.PlainButton, HTMLStencilElement {
     }
     var HTMLPlainButtonElement: {
@@ -51,6 +61,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "accordion-button": HTMLAccordionButtonElement;
         "my-component": HTMLMyComponentElement;
+        "ods-table-basic": HTMLOdsTableBasicElement;
         "plain-button": HTMLPlainButtonElement;
     }
 }
@@ -76,11 +87,16 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface OdsTableBasic {
+        "class"?: string;
+        "headless"?: boolean;
+    }
     interface PlainButton {
     }
     interface IntrinsicElements {
         "accordion-button": AccordionButton;
         "my-component": MyComponent;
+        "ods-table-basic": OdsTableBasic;
         "plain-button": PlainButton;
     }
 }
@@ -90,6 +106,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "accordion-button": LocalJSX.AccordionButton & JSXBase.HTMLAttributes<HTMLAccordionButtonElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "ods-table-basic": LocalJSX.OdsTableBasic & JSXBase.HTMLAttributes<HTMLOdsTableBasicElement>;
             "plain-button": LocalJSX.PlainButton & JSXBase.HTMLAttributes<HTMLPlainButtonElement>;
         }
     }
