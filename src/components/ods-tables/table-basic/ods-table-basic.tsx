@@ -1,4 +1,6 @@
 import { Component, Host, Prop, h } from '@stencil/core';
+// import ods-table-row from '../table-components/table-row/ods-table-row';
+// import 'ods-table-row'; //from '../table-components/table-row/ods-table-row';
 
 @Component({
   tag: 'ods-table-basic',

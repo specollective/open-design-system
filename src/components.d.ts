@@ -30,6 +30,18 @@ export namespace Components {
         "class": string;
         "headless": boolean;
     }
+    interface OdsTableData {
+        "class": string;
+        "headless": boolean;
+    }
+    interface OdsTableHeader {
+        "class": string;
+        "headless": boolean;
+    }
+    interface OdsTableRow {
+        "class": string;
+        "headless": boolean;
+    }
     interface PlainButton {
     }
 }
@@ -52,6 +64,24 @@ declare global {
         prototype: HTMLOdsTableBasicElement;
         new (): HTMLOdsTableBasicElement;
     };
+    interface HTMLOdsTableDataElement extends Components.OdsTableData, HTMLStencilElement {
+    }
+    var HTMLOdsTableDataElement: {
+        prototype: HTMLOdsTableDataElement;
+        new (): HTMLOdsTableDataElement;
+    };
+    interface HTMLOdsTableHeaderElement extends Components.OdsTableHeader, HTMLStencilElement {
+    }
+    var HTMLOdsTableHeaderElement: {
+        prototype: HTMLOdsTableHeaderElement;
+        new (): HTMLOdsTableHeaderElement;
+    };
+    interface HTMLOdsTableRowElement extends Components.OdsTableRow, HTMLStencilElement {
+    }
+    var HTMLOdsTableRowElement: {
+        prototype: HTMLOdsTableRowElement;
+        new (): HTMLOdsTableRowElement;
+    };
     interface HTMLPlainButtonElement extends Components.PlainButton, HTMLStencilElement {
     }
     var HTMLPlainButtonElement: {
@@ -62,6 +92,9 @@ declare global {
         "accordion-button": HTMLAccordionButtonElement;
         "my-component": HTMLMyComponentElement;
         "ods-table-basic": HTMLOdsTableBasicElement;
+        "ods-table-data": HTMLOdsTableDataElement;
+        "ods-table-header": HTMLOdsTableHeaderElement;
+        "ods-table-row": HTMLOdsTableRowElement;
         "plain-button": HTMLPlainButtonElement;
     }
 }
@@ -91,12 +124,27 @@ declare namespace LocalJSX {
         "class"?: string;
         "headless"?: boolean;
     }
+    interface OdsTableData {
+        "class"?: string;
+        "headless"?: boolean;
+    }
+    interface OdsTableHeader {
+        "class"?: string;
+        "headless"?: boolean;
+    }
+    interface OdsTableRow {
+        "class"?: string;
+        "headless"?: boolean;
+    }
     interface PlainButton {
     }
     interface IntrinsicElements {
         "accordion-button": AccordionButton;
         "my-component": MyComponent;
         "ods-table-basic": OdsTableBasic;
+        "ods-table-data": OdsTableData;
+        "ods-table-header": OdsTableHeader;
+        "ods-table-row": OdsTableRow;
         "plain-button": PlainButton;
     }
 }
@@ -107,6 +155,9 @@ declare module "@stencil/core" {
             "accordion-button": LocalJSX.AccordionButton & JSXBase.HTMLAttributes<HTMLAccordionButtonElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "ods-table-basic": LocalJSX.OdsTableBasic & JSXBase.HTMLAttributes<HTMLOdsTableBasicElement>;
+            "ods-table-data": LocalJSX.OdsTableData & JSXBase.HTMLAttributes<HTMLOdsTableDataElement>;
+            "ods-table-header": LocalJSX.OdsTableHeader & JSXBase.HTMLAttributes<HTMLOdsTableHeaderElement>;
+            "ods-table-row": LocalJSX.OdsTableRow & JSXBase.HTMLAttributes<HTMLOdsTableRowElement>;
             "plain-button": LocalJSX.PlainButton & JSXBase.HTMLAttributes<HTMLPlainButtonElement>;
         }
     }
