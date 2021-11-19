@@ -1,12 +1,12 @@
 import { Component, Host, h } from '@stencil/core';
 
 @Component({
-  tag: 'ods-table-body',
-  styleUrl: 'ods-table-body.scss',
+  tag: 'ods-body',
+  styleUrl: 'ods-body.scss',
   shadow: true
 })
 
-export class ODSTableBody {
+export class ODSBody {
   render() {
     return (
       <Host>
