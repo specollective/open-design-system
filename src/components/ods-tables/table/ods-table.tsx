@@ -1,17 +1,17 @@
 import { Component, Host, Prop, h } from '@stencil/core';
 
 @Component({
-  tag: 'ods-table-basic',
-  styleUrl: 'ods-table-basic.scss',
+  tag: 'ods-table',
+  styleUrl: 'ods-table.scss',
   shadow: true
 })
 
-export class ODSTableBasic {
+export class ODSTable {
   @Prop() class: string;
   @Prop() headless: boolean;
 
   render() {
-    const defaultClass = 'ods-table-basic-default'
+    const defaultClass = 'ods-table-default'
     const currentClass = this.headless
       ? this.class : `${this.class} ${defaultClass}`
     return (
