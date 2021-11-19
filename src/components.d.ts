@@ -28,6 +28,10 @@ export namespace Components {
     }
     interface OdsBody {
     }
+    interface OdsData {
+    }
+    interface OdsFoot {
+    }
     interface OdsHeader {
     }
     interface OdsRow {
@@ -35,10 +39,6 @@ export namespace Components {
     interface OdsTable {
         "class": string;
         "headless": boolean;
-    }
-    interface OdsTableData {
-    }
-    interface OdsTableFoot {
     }
     interface OdsThead {
     }
@@ -64,6 +64,18 @@ declare global {
         prototype: HTMLOdsBodyElement;
         new (): HTMLOdsBodyElement;
     };
+    interface HTMLOdsDataElement extends Components.OdsData, HTMLStencilElement {
+    }
+    var HTMLOdsDataElement: {
+        prototype: HTMLOdsDataElement;
+        new (): HTMLOdsDataElement;
+    };
+    interface HTMLOdsFootElement extends Components.OdsFoot, HTMLStencilElement {
+    }
+    var HTMLOdsFootElement: {
+        prototype: HTMLOdsFootElement;
+        new (): HTMLOdsFootElement;
+    };
     interface HTMLOdsHeaderElement extends Components.OdsHeader, HTMLStencilElement {
     }
     var HTMLOdsHeaderElement: {
@@ -82,18 +94,6 @@ declare global {
         prototype: HTMLOdsTableElement;
         new (): HTMLOdsTableElement;
     };
-    interface HTMLOdsTableDataElement extends Components.OdsTableData, HTMLStencilElement {
-    }
-    var HTMLOdsTableDataElement: {
-        prototype: HTMLOdsTableDataElement;
-        new (): HTMLOdsTableDataElement;
-    };
-    interface HTMLOdsTableFootElement extends Components.OdsTableFoot, HTMLStencilElement {
-    }
-    var HTMLOdsTableFootElement: {
-        prototype: HTMLOdsTableFootElement;
-        new (): HTMLOdsTableFootElement;
-    };
     interface HTMLOdsTheadElement extends Components.OdsThead, HTMLStencilElement {
     }
     var HTMLOdsTheadElement: {
@@ -110,11 +110,11 @@ declare global {
         "accordion-button": HTMLAccordionButtonElement;
         "my-component": HTMLMyComponentElement;
         "ods-body": HTMLOdsBodyElement;
+        "ods-data": HTMLOdsDataElement;
+        "ods-foot": HTMLOdsFootElement;
         "ods-header": HTMLOdsHeaderElement;
         "ods-row": HTMLOdsRowElement;
         "ods-table": HTMLOdsTableElement;
-        "ods-table-data": HTMLOdsTableDataElement;
-        "ods-table-foot": HTMLOdsTableFootElement;
         "ods-thead": HTMLOdsTheadElement;
         "plain-button": HTMLPlainButtonElement;
     }
@@ -143,6 +143,10 @@ declare namespace LocalJSX {
     }
     interface OdsBody {
     }
+    interface OdsData {
+    }
+    interface OdsFoot {
+    }
     interface OdsHeader {
     }
     interface OdsRow {
@@ -150,10 +154,6 @@ declare namespace LocalJSX {
     interface OdsTable {
         "class"?: string;
         "headless"?: boolean;
-    }
-    interface OdsTableData {
-    }
-    interface OdsTableFoot {
     }
     interface OdsThead {
     }
@@ -163,11 +163,11 @@ declare namespace LocalJSX {
         "accordion-button": AccordionButton;
         "my-component": MyComponent;
         "ods-body": OdsBody;
+        "ods-data": OdsData;
+        "ods-foot": OdsFoot;
         "ods-header": OdsHeader;
         "ods-row": OdsRow;
         "ods-table": OdsTable;
-        "ods-table-data": OdsTableData;
-        "ods-table-foot": OdsTableFoot;
         "ods-thead": OdsThead;
         "plain-button": PlainButton;
     }
@@ -179,11 +179,11 @@ declare module "@stencil/core" {
             "accordion-button": LocalJSX.AccordionButton & JSXBase.HTMLAttributes<HTMLAccordionButtonElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "ods-body": LocalJSX.OdsBody & JSXBase.HTMLAttributes<HTMLOdsBodyElement>;
+            "ods-data": LocalJSX.OdsData & JSXBase.HTMLAttributes<HTMLOdsDataElement>;
+            "ods-foot": LocalJSX.OdsFoot & JSXBase.HTMLAttributes<HTMLOdsFootElement>;
             "ods-header": LocalJSX.OdsHeader & JSXBase.HTMLAttributes<HTMLOdsHeaderElement>;
             "ods-row": LocalJSX.OdsRow & JSXBase.HTMLAttributes<HTMLOdsRowElement>;
             "ods-table": LocalJSX.OdsTable & JSXBase.HTMLAttributes<HTMLOdsTableElement>;
-            "ods-table-data": LocalJSX.OdsTableData & JSXBase.HTMLAttributes<HTMLOdsTableDataElement>;
-            "ods-table-foot": LocalJSX.OdsTableFoot & JSXBase.HTMLAttributes<HTMLOdsTableFootElement>;
             "ods-thead": LocalJSX.OdsThead & JSXBase.HTMLAttributes<HTMLOdsTheadElement>;
             "plain-button": LocalJSX.PlainButton & JSXBase.HTMLAttributes<HTMLPlainButtonElement>;
         }

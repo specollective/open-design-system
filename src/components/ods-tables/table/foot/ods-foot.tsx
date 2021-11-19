@@ -1,12 +1,12 @@
 import { Component, Host, Prop, h } from '@stencil/core';
 
 @Component({
-  tag: 'ods-table-foot',
-  styleUrl: 'ods-table-foot.scss',
+  tag: 'ods-foot',
+  styleUrl: 'ods-foot.scss',
   shadow: true
 })
 
-export class ODSTableFoot {
+export class ODSFoot {
   render() {
     return (
       <Host>
