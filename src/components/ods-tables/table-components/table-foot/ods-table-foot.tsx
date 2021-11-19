@@ -11,21 +11,12 @@ export class ODSTableFoot {
   @Prop() headless: boolean;
 
   render() {
-    // console.log(window.headlessmode)
-    // console.log(window)
-    const defaultClass = 'ods-table-foot-default'
-    // const currentClass = this.headless
-    // ? this.class : `${this.class} ${defaultClass}`
     return (
-      // <div>
       <Host>
-        {/* <table> */}
         <tfoot>
           <slot />
         </tfoot>
-        {/* </table> */}
       </Host >
-      // </div>
     )
   }
 }

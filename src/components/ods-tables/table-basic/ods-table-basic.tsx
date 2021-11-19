@@ -13,34 +13,14 @@ export class ODSTableBasic {
   @Prop() headless: boolean;
 
   render() {
-    // console.log(window.headlessmode)
-    // console.log(window)
     const defaultClass = 'ods-table-basic-default'
     const currentClass = this.headless
       ? this.class : `${this.class} ${defaultClass}`
     return (
       <Host>
-        {/* <div> */}
-        <table class={currentClass}
-        // style={{
-        // }}
-        >
-          {/* <tr>
-            <th>Person 1</th>
-            <th>Person 2</th>
-            <th>Person 3</th>
-            <th>Person 3</th>
-            <th>Person 3</th>
-            <th>Person 3</th>
-          </tr> */}
-          <tr>
-            {/* <td></td>
-            <td>USD</td>
-            <td>EUR</td> */}
-            <slot />
-          </tr>
+        <table class={currentClass}>
+          <slot />
         </table>
-        {/* </div> */}
       </Host >
     )
   }

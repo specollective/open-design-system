@@ -42,10 +42,6 @@ export namespace Components {
         "class": string;
         "headless": boolean;
     }
-    interface OdsTableFooter {
-        "class": string;
-        "headless": boolean;
-    }
     interface OdsTableHeader {
         "class": string;
         "headless": boolean;
@@ -98,12 +94,6 @@ declare global {
         prototype: HTMLOdsTableFootElement;
         new (): HTMLOdsTableFootElement;
     };
-    interface HTMLOdsTableFooterElement extends Components.OdsTableFooter, HTMLStencilElement {
-    }
-    var HTMLOdsTableFooterElement: {
-        prototype: HTMLOdsTableFooterElement;
-        new (): HTMLOdsTableFooterElement;
-    };
     interface HTMLOdsTableHeaderElement extends Components.OdsTableHeader, HTMLStencilElement {
     }
     var HTMLOdsTableHeaderElement: {
@@ -135,7 +125,6 @@ declare global {
         "ods-table-body": HTMLOdsTableBodyElement;
         "ods-table-data": HTMLOdsTableDataElement;
         "ods-table-foot": HTMLOdsTableFootElement;
-        "ods-table-footer": HTMLOdsTableFooterElement;
         "ods-table-header": HTMLOdsTableHeaderElement;
         "ods-table-row": HTMLOdsTableRowElement;
         "ods-table-thead": HTMLOdsTableTheadElement;
@@ -180,10 +169,6 @@ declare namespace LocalJSX {
         "class"?: string;
         "headless"?: boolean;
     }
-    interface OdsTableFooter {
-        "class"?: string;
-        "headless"?: boolean;
-    }
     interface OdsTableHeader {
         "class"?: string;
         "headless"?: boolean;
@@ -205,7 +190,6 @@ declare namespace LocalJSX {
         "ods-table-body": OdsTableBody;
         "ods-table-data": OdsTableData;
         "ods-table-foot": OdsTableFoot;
-        "ods-table-footer": OdsTableFooter;
         "ods-table-header": OdsTableHeader;
         "ods-table-row": OdsTableRow;
         "ods-table-thead": OdsTableThead;
@@ -222,7 +206,6 @@ declare module "@stencil/core" {
             "ods-table-body": LocalJSX.OdsTableBody & JSXBase.HTMLAttributes<HTMLOdsTableBodyElement>;
             "ods-table-data": LocalJSX.OdsTableData & JSXBase.HTMLAttributes<HTMLOdsTableDataElement>;
             "ods-table-foot": LocalJSX.OdsTableFoot & JSXBase.HTMLAttributes<HTMLOdsTableFootElement>;
-            "ods-table-footer": LocalJSX.OdsTableFooter & JSXBase.HTMLAttributes<HTMLOdsTableFooterElement>;
             "ods-table-header": LocalJSX.OdsTableHeader & JSXBase.HTMLAttributes<HTMLOdsTableHeaderElement>;
             "ods-table-row": LocalJSX.OdsTableRow & JSXBase.HTMLAttributes<HTMLOdsTableRowElement>;
             "ods-table-thead": LocalJSX.OdsTableThead & JSXBase.HTMLAttributes<HTMLOdsTableTheadElement>;

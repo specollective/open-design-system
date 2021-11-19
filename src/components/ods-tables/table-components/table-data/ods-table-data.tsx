@@ -11,21 +11,12 @@ export class ODSTableData {
   @Prop() headless: boolean;
 
   render() {
-    // console.log(window.headlessmode)
-    // console.log(window)
-    const defaultClass = 'ods-table-data-default'
-    // const currentClass = this.headless
-    // ? this.class : `${this.class} ${defaultClass}`
     return (
-      // <div>
       <Host>
-        {/* <table> */}
         <td>
           <slot />
         </td>
-        {/* </table> */}
       </Host >
-      // </div>
     )
   }
 }
