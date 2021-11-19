@@ -12,6 +12,11 @@
       color: rgb(255, 0, 183);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
     }
+
+    /*
+    :host {
+      display: contents;
+    } */
   </style>
   <script type="module" src="/build/spec-ods.esm.js"></script>
 
@@ -63,7 +68,16 @@
         <ods-table-data>61</ods-table-data>
       </ods-table-row>
     </ods-table-body>
-    <!-- </table> -->
+    <ods-table-footer>
+      <ods-table-row>
+        <ods-table-data>15</ods-table-data>
+        <ods-table-data>25</ods-table-data>
+        <ods-table-data>32</ods-table-data>
+        <ods-table-data>41</ods-table-data>
+        <ods-table-data>51</ods-table-data>
+        <ods-table-data>64</ods-table-data>
+      </ods-table-row>
+    </ods-table-footer>
   </ods-table-basic>
 
   <h1>
@@ -87,14 +101,6 @@
       <td>Janet</td>
     </tr>
     <tr></tr>
-    <tr>
-      <td>45</td>
-      <td>55</td>
-      <td>22</td>
-      <td>45</td>
-      <td>62</td>
-      <td>61</td>
-    </tr>
     <tr>
       <td>45</td>
       <td>55</td>
