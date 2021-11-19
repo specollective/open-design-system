@@ -31,28 +31,16 @@ export namespace Components {
         "headless": boolean;
     }
     interface OdsTableBody {
-        "class": string;
-        "headless": boolean;
     }
     interface OdsTableData {
-        "class": string;
-        "headless": boolean;
     }
     interface OdsTableFoot {
-        "class": string;
-        "headless": boolean;
     }
     interface OdsTableHeader {
-        "class": string;
-        "headless": boolean;
     }
     interface OdsTableRow {
-        "class": string;
-        "headless": boolean;
     }
     interface OdsTableThead {
-        "class": string;
-        "headless": boolean;
     }
     interface PlainButton {
     }
@@ -158,28 +146,16 @@ declare namespace LocalJSX {
         "headless"?: boolean;
     }
     interface OdsTableBody {
-        "class"?: string;
-        "headless"?: boolean;
     }
     interface OdsTableData {
-        "class"?: string;
-        "headless"?: boolean;
     }
     interface OdsTableFoot {
-        "class"?: string;
-        "headless"?: boolean;
     }
     interface OdsTableHeader {
-        "class"?: string;
-        "headless"?: boolean;
     }
     interface OdsTableRow {
-        "class"?: string;
-        "headless"?: boolean;
     }
     interface OdsTableThead {
-        "class"?: string;
-        "headless"?: boolean;
     }
     interface PlainButton {
     }

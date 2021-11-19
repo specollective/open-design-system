@@ -7,9 +7,6 @@ import { Component, Host, Prop, h } from '@stencil/core';
 })
 
 export class ODSTableRow {
-  @Prop() class: string;
-  @Prop() headless: boolean;
-
   render() {
     return (
       <Host>

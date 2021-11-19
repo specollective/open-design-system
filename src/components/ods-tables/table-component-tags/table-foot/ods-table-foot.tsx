@@ -7,9 +7,6 @@ import { Component, Host, Prop, h } from '@stencil/core';
 })
 
 export class ODSTableFoot {
-  @Prop() class: string;
-  @Prop() headless: boolean;
-
   render() {
     return (
       <Host>
