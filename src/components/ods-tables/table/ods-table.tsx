@@ -16,9 +16,10 @@ export class ODSTable {
       ? this.class : `${this.class} ${defaultClass}`
     return (
       <Host>
-        <table class={currentClass}>
-          <slot></slot>
-        </table>
+        <slot>
+          <table class={currentClass}>
+          </table>
+        </slot>
       </Host >
     )
   }
