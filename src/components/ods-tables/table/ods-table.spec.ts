@@ -10,8 +10,8 @@ describe('ods-table', () => {
     expect(root).toEqualHtml(`
       <ods-table>
         <mock:shadow-root>
-          <table>
-
+          <table class="ods-table-default undefined">
+          <slot></slot>
         </table>
         </mock:shadow-root>
       </ods-table>
