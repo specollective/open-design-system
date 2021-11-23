@@ -15,7 +15,8 @@
   </style>
   <script type="module" src="/build/spec-ods.esm.js"></script>
 
-  <script> window.headlessmode = true</script>
+  <!-- <script> window[headlessmode] = true</script> -->
+  <!-- <script> window.headlessmode = true</script> -->
   <script nomodule src="/build/spec-ods.js"></script>
 </head>
 
@@ -30,7 +31,7 @@
   <h1>
     Placeholder: ODS-table
   </h1>
-  <ods-table class='test-classes'>
+  <ods-table headless="true" class='test-classes'>
     <ods-thead>
       <ods-row>
         <ods-header>Person 1</ods-header>
