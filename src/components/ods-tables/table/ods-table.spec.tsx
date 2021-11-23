@@ -1,8 +1,9 @@
+import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { ODSTable } from './ods-table';
 
 describe('ods-table', () => {
-  it('renders with test values', async () => {
+  xit('renders with test values', async () => {
     const headless = false;
     const defaultClass = 'ods-table-default'
     const currentClass = headless ? defaultClass : `${defaultClass} undefined`
@@ -15,13 +16,12 @@ describe('ods-table', () => {
         </mock:shadow-root>
       </ods-table>
     `
-
-    const { root } = await newSpecPage({
+    const page = await newSpecPage({
       components: [ODSTable],
       html: '<ods-table></ods-table>',
-      // template: () => ()
+      // template: () => (<ods-table > </ods-table>)
     });
-    expect(root).toEqualHtml(display);
+    expect(page.root).toEqualHtml(display);
   });
 
 
