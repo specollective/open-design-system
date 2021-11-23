@@ -1,4 +1,3 @@
-import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { ODSTable } from './ods-table';
 
@@ -19,7 +18,6 @@ describe('ods-table', () => {
     const page = await newSpecPage({
       components: [ODSTable],
       html: '<ods-table></ods-table>',
-      // template: () => (<ods-table > </ods-table>)
     });
     expect(page.root).toEqualHtml(display);
   });
