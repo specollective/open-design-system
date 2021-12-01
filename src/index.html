@@ -1,23 +1,125 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
 
-    <script type="module" src="/build/spec-ods.esm.js"></script>
-    <script nomodule src="/build/spec-ods.js"></script>
-  </head>
-  <body>
-    <accordion-button width='75%'
-      label='SPEC Accordion Button'
-      color='blue'
-      description="Articulate the buttons how you wish. If changes are made to this stencil, please update with a newer version before publishing">
-    </accordion-button>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Stencil Component Starter</title>
 
-    <plain-button>
-      EAT STUFF
-    </plain-button>
+  <style>
+    .test-classes {
+      font-size: 22px;
+      color: rgb(255, 0, 183);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    }
 
-  </body>
+    /*
+    :host {
+      display: contents;
+    } */
+  </style>
+  <script type="module" src="/build/spec-ods.esm.js"></script>
+
+  <script> window.headlessmode = true</script>
+  <script nomodule src="/build/spec-ods.js"></script>
+</head>
+
+<body>
+  <accordion-button width='75%' label='SPEC Accordion Button' color='blue'
+    description="Articulate the buttons how you wish. If changes are made to this stencil, please update with a newer version before publishing">
+  </accordion-button>
+
+  <plain-button name="plain-button"> Placeholder: ODS-plain-button
+  </plain-button>
+
+  <!-- <ods-table-basic headless="true" class='test-classes'> -->
+  <!-- <ods-table-basic class='test-classes'> -->
+
+  <h1>
+    Placeholder: ODS-table-basic
+  </h1>
+  <ods-table-basic class='test-classes'>
+    <ods-table-thead>
+      <ods-table-row>
+        <ods-table-header>Person 1</ods-table-header>
+        <ods-table-header>Person 2</ods-table-header>
+        <ods-table-header>Person 3</ods-table-header>
+        <ods-table-header>Person 4</ods-table-header>
+        <ods-table-header>Person 5</ods-table-header>
+        <ods-table-header>Person 6</ods-table-header>
+      </ods-table-row>
+    </ods-table-thead>
+    <ods-table-body>
+      <ods-table-row>
+        <ods-table-data>Claudia</ods-table-data>
+        <ods-table-data>Frank</ods-table-data>
+        <ods-table-data>Carolyn</ods-table-data>
+        <ods-table-data>Lee</ods-table-data>
+        <ods-table-data>Nicole</ods-table-data>
+        <ods-table-data>Janet</ods-table-data>
+      </ods-table-row>
+
+      <ods-table-row>
+        <ods-table-data>45</ods-table-data>
+        <ods-table-data>55</ods-table-data>
+        <ods-table-data>22</ods-table-data>
+        <ods-table-data>45</ods-table-data>
+        <ods-table-data>62</ods-table-data>
+        <ods-table-data>61</ods-table-data>
+      </ods-table-row>
+    </ods-table-body>
+    <ods-table-foot>
+      <ods-table-row>
+        <ods-table-data>15</ods-table-data>
+        <ods-table-data>25</ods-table-data>
+        <ods-table-data>32</ods-table-data>
+        <ods-table-data>41</ods-table-data>
+        <ods-table-data>51</ods-table-data>
+        <ods-table-data>64</ods-table-data>
+      </ods-table-row>
+    </ods-table-foot>
+  </ods-table-basic>
+
+  <h1>
+    Placeholder: standard-html-table
+  </h1>
+  <table>
+    <tr>
+      <th>Person 1</th>
+      <th>Person 2</th>
+      <th>Person 3</th>
+      <th>Person 4</th>
+      <th>Person 5</th>
+      <th>Person 6</th>
+    </tr>
+    <tr>
+      <td>Claudia</td>
+      <td>Frank</td>
+      <td>Carolyn</td>
+      <td>Lee</td>
+      <td>Nicole</td>
+      <td>Janet</td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td>45</td>
+      <td>55</td>
+      <td>22</td>
+      <td>45</td>
+      <td>62</td>
+      <td>61</td>
+    </tr>
+    <tfoot>
+      <tr>
+        <td>15</td>
+        <td>25</td>
+        <td>32</td>
+        <td>41</td>
+        <td>51</td>
+        <td>64</td>
+      </tr>
+    </tfoot>
+  </table>
+</body>
+
 </html>
