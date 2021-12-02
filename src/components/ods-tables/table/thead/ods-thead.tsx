@@ -1,12 +1,12 @@
-import { Component, Host, Prop, h } from '@stencil/core';
+import { Component, Host, h } from '@stencil/core';
 
 @Component({
-  tag: 'ods-table-thead',
-  styleUrl: 'ods-table-thead.scss',
+  tag: 'ods-thead',
+  styleUrl: 'ods-thead.scss',
   shadow: true
 })
 
-export class ODSTableThead {
+export class ODSThead {
   render() {
     return (
       <Host>

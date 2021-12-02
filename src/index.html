@@ -12,11 +12,6 @@
       color: rgb(255, 0, 183);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
     }
-
-    /*
-    :host {
-      display: contents;
-    } */
   </style>
   <script type="module" src="/build/spec-ods.esm.js"></script>
 
@@ -32,53 +27,50 @@
   <plain-button name="plain-button"> Placeholder: ODS-plain-button
   </plain-button>
 
-  <!-- <ods-table-basic headless="true" class='test-classes'> -->
-  <!-- <ods-table-basic class='test-classes'> -->
-
   <h1>
-    Placeholder: ODS-table-basic
+    Placeholder: ODS-table
   </h1>
-  <ods-table-basic class='test-classes'>
-    <ods-table-thead>
-      <ods-table-row>
-        <ods-table-header>Person 1</ods-table-header>
-        <ods-table-header>Person 2</ods-table-header>
-        <ods-table-header>Person 3</ods-table-header>
-        <ods-table-header>Person 4</ods-table-header>
-        <ods-table-header>Person 5</ods-table-header>
-        <ods-table-header>Person 6</ods-table-header>
-      </ods-table-row>
-    </ods-table-thead>
-    <ods-table-body>
-      <ods-table-row>
-        <ods-table-data>Claudia</ods-table-data>
-        <ods-table-data>Frank</ods-table-data>
-        <ods-table-data>Carolyn</ods-table-data>
-        <ods-table-data>Lee</ods-table-data>
-        <ods-table-data>Nicole</ods-table-data>
-        <ods-table-data>Janet</ods-table-data>
-      </ods-table-row>
+  <ods-table class='test-classes'>
+    <ods-thead>
+      <ods-row>
+        <ods-header>Person 1</ods-header>
+        <ods-header>Person 2</ods-header>
+        <ods-header>Person 3</ods-header>
+        <ods-header>Person 4</ods-header>
+        <ods-header>Person 5</ods-header>
+        <ods-header>Person 6</ods-header>
+      </ods-row>
+    </ods-thead>
+    <ods-body>
+      <ods-row>
+        <ods-data>Claudia</ods-data>
+        <ods-data>Frank</ods-data>
+        <ods-data>Carolyn</ods-data>
+        <ods-data>Lee</ods-data>
+        <ods-data>Nicole</ods-data>
+        <ods-data>Janet</ods-data>
+      </ods-row>
 
-      <ods-table-row>
-        <ods-table-data>45</ods-table-data>
-        <ods-table-data>55</ods-table-data>
-        <ods-table-data>22</ods-table-data>
-        <ods-table-data>45</ods-table-data>
-        <ods-table-data>62</ods-table-data>
-        <ods-table-data>61</ods-table-data>
-      </ods-table-row>
-    </ods-table-body>
-    <ods-table-foot>
-      <ods-table-row>
-        <ods-table-data>15</ods-table-data>
-        <ods-table-data>25</ods-table-data>
-        <ods-table-data>32</ods-table-data>
-        <ods-table-data>41</ods-table-data>
-        <ods-table-data>51</ods-table-data>
-        <ods-table-data>64</ods-table-data>
-      </ods-table-row>
-    </ods-table-foot>
-  </ods-table-basic>
+      <ods-row>
+        <ods-data>45</ods-data>
+        <ods-data>55</ods-data>
+        <ods-data>22</ods-data>
+        <ods-data>45</ods-data>
+        <ods-data>62</ods-data>
+        <ods-data>61</ods-data>
+      </ods-row>
+    </ods-body>
+    <ods-foot>
+      <ods-row>
+        <ods-data>15</ods-data>
+        <ods-data>25</ods-data>
+        <ods-data>32</ods-data>
+        <ods-data>41</ods-data>
+        <ods-data>51</ods-data>
+        <ods-data>64</ods-data>
+      </ods-row>
+    </ods-foot>
+  </ods-table>
 
   <h1>
     Placeholder: standard-html-table
