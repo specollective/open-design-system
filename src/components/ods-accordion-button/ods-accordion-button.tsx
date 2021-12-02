@@ -1,7 +1,7 @@
 import { Component, State, EventEmitter, Event, Prop, h } from '@stencil/core'
 
 @Component({
-  tag: 'accordion-button',
+  tag: 'ods-accordion-button',
   styleUrl: 'accordion-button.scss',
   shadow: true
 })

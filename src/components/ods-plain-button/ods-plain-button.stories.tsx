@@ -1,7 +1,7 @@
 import readme from './readme.md'
 
 export default {
-  title: 'PlainButton',
+  title: 'Plain Button',
   /**
    * Notes is an optional string which will be displayed in the "Notes"
    * tab for your component. It is recommended to use the generated readme,

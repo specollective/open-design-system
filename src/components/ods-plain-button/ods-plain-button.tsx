@@ -1,8 +1,8 @@
 import { Component, h } from '@stencil/core'
 
 @Component({
-  tag: 'plain-button',
-  styleUrl: 'plain-button.scss',
+  tag: 'ods-plain-button',
+  styleUrl: 'ods-plain-button.scss',
   shadow: true
 })
 
