@@ -41,44 +41,82 @@ Person 1 Person 2 Person 3
     expect(coins).not.toBeNull();
   });
 
-  it('ods-table renders props', async () => {
+  it('ods-table only renders base-class', async () => {
     const page = await newE2EPage();
     const props = {
       className: "custom-class",
-      headless: "true"
+      headless: true
     };
-
+    const baseClass = "base-class"
     await page.setContent(`
-      <ods-table class="coins ${props.className}" headless=${props.headless}>
+      <ods-table class="${baseClass}">
         <ods-thead class="food">
         </ods-thead>
       </ods-table>
     `);
     const table = await page.find('ods-table');
     const thead = await page.find('ods-thead');
-    // const coins = await page.find('.coins');
+    const base = await page.find('.base-class');
 
     await page.$eval('ods-table',
       (element: any, { className, headless }) => {
-        element.className += `coins ${className} honey`;
+        const baseClass = "base-class"
         element.headless = headless;
-        console.log("element.className => ", element.className);
-        console.log("element.headless => ", element.headless);
+
+        element.headless ?
+          element.className = baseClass :
+          element.className += `${className} third-class`
+
       },
       props
     );
-
+    const hydro = "hydrated"
     await page.waitForChanges();
-    // expect(table).toHaveLength(1);
-    expect(table).toHaveClass('coins');
-    // expect(coins).not.toHaveLength(1);
-    expect(table).toHaveClass('honey');
-    expect(table).toHaveClass('custom-class');
-
+    expect(table).toHaveClass('base-class');
+    expect(table).not.toHaveClass(`${hydro}custom-class`);
+    expect(table).not.toHaveClass(`third-class`);
+    expect(base).not.toBeNull();
     expect(thead).not.toHaveClass('custom-class');
-    // expect(thead).toHaveClass('custom-class');  |
-    expect(thead).not.toHaveClass('coins');
-    // expect(thead).toHaveClass('food');
+    expect(thead).not.toHaveClass('test-class');
+  });
+
+  it('ods-table renders the base && custom classes', async () => {
+    const page = await newE2EPage();
+    const props = {
+      className: "custom-class",
+      headless: false
+    };
+    const baseClass = "base-class"
+    await page.setContent(`
+      <ods-table class="${baseClass}">
+        <ods-thead class="food">
+        </ods-thead>
+      </ods-table>
+    `);
+    const table = await page.find('ods-table');
+    const thead = await page.find('ods-thead');
+    const base = await page.find('.base-class');
+
+
+    await page.$eval('ods-table',
+      (element: any, { className, headless }) => {
+        const baseClass = "base-class"
+        element.headless = headless;
+
+        element.headless ?
+          element.className = baseClass :
+          element.className += `${className} third-class`
+      },
+      props
+    );
+    const hydro = "hydrated"
+    await page.waitForChanges();
+    expect(table).toHaveClass('base-class');
+    expect(table).toHaveClass(`${hydro}custom-class`);
+    expect(table).toHaveClass(`third-class`);
+    expect(base).not.toBeNull();
+    expect(thead).not.toHaveClass('custom-class');
+    expect(thead).not.toHaveClass('test-class');
   });
 
 });
