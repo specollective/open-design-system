@@ -2,8 +2,9 @@ import { h } from '@stencil/core';
 import { newE2EPage } from '@stencil/core/testing';
 
 describe('ods-table', () => {
-  it('ods-table and it\'s contents have rendered correctly', async () => {
+  it('has rendered correctly', async () => {
     const page = await newE2EPage();
+
     await page.setContent(`
       <ods-table>
         <ods-thead>
@@ -16,32 +17,30 @@ describe('ods-table', () => {
       </ods-table>
     `);
     const elm = await page.find('ods-table');
-    expect(elm).toEqualText(`
-Person 1 Person 2 Person 3
-      `);
+    expect(elm).toEqualText(`Person 1 Person 2 Person 3`);
   });
 
-  it('ods-table has been assigned the appropriate class', async () => {
+  it('has been assigned the appropriate class', async () => {
     const page = await newE2EPage();
 
     await page.setContent(`
-      <ods-table class="coins">
+      <ods-table class="custom-class">
         <ods-thead class="food">
         </ods-thead>
       </ods-table>
     `);
 
     const element = await page.find('ods-table');
-    const coins = await page.find('ods-table >>> .coins');
+    const customClass = await page.find('ods-table >>> .custom-class');
     const thead = await page.find('ods-thead')
     await page.waitForChanges();
 
-    expect(element).toHaveClass('coins');
+    expect(element).toHaveClass('custom-class');
     expect(thead).toHaveClass('food');
-    expect(coins).not.toBeNull();
+    expect(customClass).not.toBeNull();
   });
 
-  it('ods-table only renders base-class', async () => {
+  it('only renders base-class', async () => {
     const page = await newE2EPage();
     const props = {
       className: "custom-class",
@@ -80,7 +79,7 @@ Person 1 Person 2 Person 3
     expect(thead).not.toHaveClass('test-class');
   });
 
-  it('ods-table renders the base && custom classes', async () => {
+  it('renders the base && custom classes', async () => {
     const page = await newE2EPage();
     const props = {
       className: "custom-class",
