@@ -20,36 +20,6 @@ describe('ods-table', () => {
     expect(elm).toEqualText(`Person 1 Person 2 Person 3`);
   });
 
-  it('child element displays correctly', async () => {
-    const page = await newE2EPage();
-    const handleClick = () => {
-      // console.log('this is LU:');
-      // return `<p> beautiful gui</p>`
-    }
-    await page.setContent(`
-      <ods-table>
-        <ods-thead>
-          <ods-row>
-            <ods-button class=clickable onclick=${handleClick()}>Person 1</ods-button>
-            <ods-header>Person 2</ods-header>
-            <ods-header>Person 3</ods-header>
-          </ods-row>
-        </ods-thead>
-      </ods-table>
-    `);
-    const elm = await page.find('ods-table');
-    // const row = await page.find('ods-row');
-    const btn = await page.find('ods-button');
-    // const clickedBtn = await btn.click()
-    // console.log(await btn.click())
-    // expect(elm).toEqualText(`Person 1 Person 2 Person 3`);
-    // expect(row).toEqualText(`Person 1 Person 2 Person 3`);
-    // expect(btn).toEqualText(`Person 1 Person 2 Person 3`);
-    // expect(btn).toHaveClass('clickable');
-    // expect(clickedBtn).toEqualText(`beautiful gui`);
-
-  });
-
   it('has been assigned the appropriate class', async () => {
     const page = await newE2EPage();
 
@@ -147,6 +117,7 @@ describe('ods-table', () => {
     expect(thead).not.toHaveClass('custom-class');
     expect(thead).not.toHaveClass('test-class');
   });
+
   it('nested ods-button element maintains it\'s class and onClick() functionality', async () => {
     const page = await newE2EPage();
     const props = {
@@ -201,4 +172,5 @@ describe('ods-table', () => {
     expect(btn).toHaveClass(clickStatus);
     expect(btnMessage).toEqualText("On");
   });
+
 });
