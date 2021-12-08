@@ -40,7 +40,7 @@ describe('ods-table', () => {
     expect(customClass).not.toBeNull();
   });
 
-  it('only renders base-class', async () => {
+  it('base-class is the only rendered class', async () => {
     const page = await newE2EPage();
     const props = {
       className: "custom-class",
@@ -79,7 +79,7 @@ describe('ods-table', () => {
     expect(thead).not.toHaveClass('test-class');
   });
 
-  it('renders the base && custom classes', async () => {
+  it('base && custom class are both rendered', async () => {
     const page = await newE2EPage();
     const props = {
       className: "custom-class",
