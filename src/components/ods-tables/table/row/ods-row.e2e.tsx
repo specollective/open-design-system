@@ -65,7 +65,7 @@ describe('ods-row', () => {
     expect(rowBaseClass).not.toBeNull();
   });
 
-  it('only rendered base-class', async () => {
+  it('base-class is the only rendered class', async () => {
     const page = await newE2EPage();
     const props = {
       className: "custom-class",
@@ -107,7 +107,7 @@ describe('ods-row', () => {
     expect(rowBaseClass).not.toBeNull();
   });
 
-  it('rendered the base && custom classes', async () => {
+  it('base && custom class are both rendered', async () => {
     const page = await newE2EPage();
     const props = {
       className: "custom-class",
