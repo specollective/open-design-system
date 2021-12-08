@@ -11,7 +11,7 @@ describe('ods-data', () => {
           <ods-data>
             Person 1
           </ods-data>
-        </ods-thead>
+        </ods-body>
       </ods-table>
     `);
 
