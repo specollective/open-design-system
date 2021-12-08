@@ -87,4 +87,48 @@ describe('ods-data', () => {
     expect(data).not.toHaveClasses([`${hydrated}custom-class`, `third-class`]);
     expect(dataBaseClass).not.toBeNull();
   });
+
+  it('base && custom class are both rendered', async () => {
+    const page = await newE2EPage();
+    const props = {
+      className: "custom-class",
+      headless: false
+    };
+    const baseClass = "base-class"
+
+    await page.setContent(`
+      <ods-table>
+        <ods-body>
+          <ods-data class="${baseClass}">
+            <ods-header>Person 1</ods-header>
+            <ods-header>Person 2</ods-header>
+            <ods-header>Person 3</ods-header>
+          </ods-data>
+        </ods-body>
+      </ods-table>
+    `);
+
+    const base = await page.find('.base-class');
+    const data = await page.find('ods-data');
+
+    await page.$eval('ods-data',
+      (element: any, { className, headless }) => {
+        const baseClass = "base-class"
+        element.headless = headless;
+        element.headless ?
+          element.className = baseClass :
+          element.className += `${className} third-class`
+      },
+      props
+    );
+
+    const hydrated = "hydrated"
+    await page.waitForChanges();
+    expect(data).not.toBeNull();
+    expect(data).toHaveClass('base-class');
+    expect(data).toHaveClasses([`${hydrated}custom-class`, "third-class"]);
+    expect(base).not.toBeNull();
+  });
+
+
 });
