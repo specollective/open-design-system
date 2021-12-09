@@ -41,5 +41,45 @@ describe('ods-header', () => {
     expect(headerBaseClass).not.toBeNull();
   });
 
+  it('base-class is the only rendered class', async () => {
+    const page = await newE2EPage();
+    const props = {
+      className: "custom-class",
+      headless: true
+    };
+    const baseClass = "base-class"
+
+    await page.setContent(`
+      <ods-table>
+        <ods-header class="${baseClass}">
+          <ods-header>Person 1</ods-header>
+          <ods-header>Person 2</ods-header>
+          <ods-header>Person 3</ods-header>
+        </ods-header>
+      </ods-table>
+    `);
+
+    const header = await page.find('ods-header');
+    const headerBaseClass = await page.find('.base-class');
+    const hydrated = "hydrated"
+
+    await page.$eval('ods-header',
+      (element: any, { className, headless }) => {
+        const baseClass = "base-class"
+        element.headless = headless;
+        element.headless ?
+          element.className = baseClass :
+          element.className += `${className} third-class`
+      },
+      props
+    );
+
+    await page.waitForChanges();
+    expect(header).not.toBeNull();
+    expect(header).toHaveClass('base-class');
+    expect(header).not.toHaveClasses([`${hydrated}custom-class`, `third-class`]);
+    expect(headerBaseClass).not.toBeNull();
+  });
+
 
 });
