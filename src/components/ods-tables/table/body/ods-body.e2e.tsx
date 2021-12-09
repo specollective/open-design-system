@@ -82,6 +82,46 @@ describe('ods-body', () => {
     expect(bodyBaseClass).not.toBeNull();
   });
 
+  it('base && custom class are both rendered', async () => {
+    const page = await newE2EPage();
+    const props = {
+      className: "custom-class",
+      headless: false
+    };
+    const baseClass = "base-class"
+
+    await page.setContent(`
+      <ods-table>
+        <ods-body class="${baseClass}">
+          <ods-header>Person 1</ods-header>
+          <ods-header>Person 2</ods-header>
+          <ods-header>Person 3</ods-header>
+        </ods-body>
+      </ods-table>
+    `);
+
+    const base = await page.find('.base-class');
+    const body = await page.find('ods-body');
+
+    await page.$eval('ods-body',
+      (element: any, { className, headless }) => {
+        const baseClass = "base-class"
+        element.headless = headless;
+        element.headless ?
+          element.className = baseClass :
+          element.className += `${className} third-class`
+      },
+      props
+    );
+
+    const hydrated = "hydrated"
+    await page.waitForChanges();
+    expect(body).not.toBeNull();
+    expect(body).toHaveClass('base-class');
+    expect(body).toHaveClasses([`${hydrated}custom-class`, "third-class"]);
+    expect(base).not.toBeNull();
+  });
+
   it('nested ods-button maintained it\'s class and onClick() functionality', async () => {
     const page = await newE2EPage();
     const props = {
