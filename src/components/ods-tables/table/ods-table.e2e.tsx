@@ -118,7 +118,7 @@ describe('ods-table', () => {
     expect(thead).not.toHaveClass('test-class');
   });
 
-  it('nested ods-button element maintains it\'s class and onClick() functionality', async () => {
+  it('nested ods-button maintained it\'s class and onClick() functionality', async () => {
     const page = await newE2EPage();
     const props = {
       className: "custom-class",

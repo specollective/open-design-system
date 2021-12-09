@@ -149,7 +149,7 @@ describe('ods-row', () => {
     expect(base).not.toBeNull();
   });
 
-  it('nested ods-button element maintained it\'s class and onClick() functionality', async () => {
+  it('nested ods-button maintained it\'s class and onClick() functionality', async () => {
     const page = await newE2EPage();
     const props = {
       className: "custom-class",
