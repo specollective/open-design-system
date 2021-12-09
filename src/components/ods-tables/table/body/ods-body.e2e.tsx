@@ -82,4 +82,56 @@ describe('ods-body', () => {
     expect(bodyBaseClass).not.toBeNull();
   });
 
+  it('nested ods-button maintained it\'s class and onClick() functionality', async () => {
+    const page = await newE2EPage();
+    const props = {
+      className: "custom-class",
+      headless: false
+    };
+    const baseClass = "base-class"
+    const clickStatus = "clickable"
+    let btnMessage = "Off"
+
+    const handleClick = () => {
+      clickStatus == "clickable" ?
+        btnMessage = "On"
+        :
+        btnMessage = "Off"
+    }
+
+    await page.setContent(`
+      <ods-table>
+        <ods-body class="${baseClass}">
+          <ods-button class="${clickStatus}" onClick="${handleClick()}">
+            ${btnMessage}
+          </ods-button>
+        </ods-body>
+      </ods-table>
+    `);
+
+    const hydrated = "hydrated"
+    const body = await page.find('ods-body');
+    const base = await page.find('.base-class');
+    const btn = await page.find('ods-button');
+
+    await page.$eval('ods-body',
+      (element: any, { className, headless }) => {
+        const baseClass = "base-class"
+        element.headless = headless;
+        element.headless ?
+          element.className = baseClass :
+          element.className += `${className} third-class`
+      },
+      props
+    );
+
+    await page.waitForChanges();
+    expect(body).not.toBeNull();
+    expect(body).toHaveClass('base-class');
+    expect(body).toHaveClasses([`${hydrated}custom-class`, "third-class"]);
+    expect(base).not.toBeNull();
+    expect(btn).toHaveClass(clickStatus);
+    expect(btnMessage).toEqualText("On");
+  });
+
 });
