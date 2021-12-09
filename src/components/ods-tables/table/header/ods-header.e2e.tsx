@@ -25,9 +25,7 @@ describe('ods-header', () => {
     await page.setContent(`
       <ods-table>
           <ods-header class="${headerClass}">
-            <ods-row>Person 1</ods-row>
-            <ods-row>Person 2</ods-row>
-            <ods-row>Person 3</ods-row>
+            Person 1
           </ods-header>
       </ods-table>
     `);
@@ -51,10 +49,8 @@ describe('ods-header', () => {
 
     await page.setContent(`
       <ods-table>
-        <ods-header class="${baseClass}">
-          <ods-header>Person 1</ods-header>
-          <ods-header>Person 2</ods-header>
-          <ods-header>Person 3</ods-header>
+        < class="${baseClass}">
+          Person 1
         </ods-header>
       </ods-table>
     `);
@@ -92,9 +88,7 @@ describe('ods-header', () => {
     await page.setContent(`
       <ods-table>
         <ods-header class="${baseClass}">
-          <ods-header>Person 1</ods-header>
-          <ods-header>Person 2</ods-header>
-          <ods-header>Person 3</ods-header>
+          Person 1
         </ods-header>
       </ods-table>
     `);
