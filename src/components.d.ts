@@ -34,6 +34,10 @@ export namespace Components {
     }
     interface OdsHeader {
     }
+    interface OdsInputText {
+        "class": string;
+        "headless": boolean;
+    }
     interface OdsRow {
     }
     interface OdsTable {
@@ -82,6 +86,12 @@ declare global {
         prototype: HTMLOdsHeaderElement;
         new (): HTMLOdsHeaderElement;
     };
+    interface HTMLOdsInputTextElement extends Components.OdsInputText, HTMLStencilElement {
+    }
+    var HTMLOdsInputTextElement: {
+        prototype: HTMLOdsInputTextElement;
+        new (): HTMLOdsInputTextElement;
+    };
     interface HTMLOdsRowElement extends Components.OdsRow, HTMLStencilElement {
     }
     var HTMLOdsRowElement: {
@@ -113,6 +123,7 @@ declare global {
         "ods-data": HTMLOdsDataElement;
         "ods-foot": HTMLOdsFootElement;
         "ods-header": HTMLOdsHeaderElement;
+        "ods-input-text": HTMLOdsInputTextElement;
         "ods-row": HTMLOdsRowElement;
         "ods-table": HTMLOdsTableElement;
         "ods-thead": HTMLOdsTheadElement;
@@ -149,6 +160,10 @@ declare namespace LocalJSX {
     }
     interface OdsHeader {
     }
+    interface OdsInputText {
+        "class"?: string;
+        "headless"?: boolean;
+    }
     interface OdsRow {
     }
     interface OdsTable {
@@ -166,6 +181,7 @@ declare namespace LocalJSX {
         "ods-data": OdsData;
         "ods-foot": OdsFoot;
         "ods-header": OdsHeader;
+        "ods-input-text": OdsInputText;
         "ods-row": OdsRow;
         "ods-table": OdsTable;
         "ods-thead": OdsThead;
@@ -182,6 +198,7 @@ declare module "@stencil/core" {
             "ods-data": LocalJSX.OdsData & JSXBase.HTMLAttributes<HTMLOdsDataElement>;
             "ods-foot": LocalJSX.OdsFoot & JSXBase.HTMLAttributes<HTMLOdsFootElement>;
             "ods-header": LocalJSX.OdsHeader & JSXBase.HTMLAttributes<HTMLOdsHeaderElement>;
+            "ods-input-text": LocalJSX.OdsInputText & JSXBase.HTMLAttributes<HTMLOdsInputTextElement>;
             "ods-row": LocalJSX.OdsRow & JSXBase.HTMLAttributes<HTMLOdsRowElement>;
             "ods-table": LocalJSX.OdsTable & JSXBase.HTMLAttributes<HTMLOdsTableElement>;
             "ods-thead": LocalJSX.OdsThead & JSXBase.HTMLAttributes<HTMLOdsTheadElement>;
