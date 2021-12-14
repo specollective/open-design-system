@@ -34,6 +34,10 @@ export namespace Components {
     }
     interface OdsHeader {
     }
+    interface OdsInputNumeric {
+        "class": string;
+        "headless": boolean;
+    }
     interface OdsInputText {
         "class": string;
         "headless": boolean;
@@ -86,6 +90,12 @@ declare global {
         prototype: HTMLOdsHeaderElement;
         new (): HTMLOdsHeaderElement;
     };
+    interface HTMLOdsInputNumericElement extends Components.OdsInputNumeric, HTMLStencilElement {
+    }
+    var HTMLOdsInputNumericElement: {
+        prototype: HTMLOdsInputNumericElement;
+        new (): HTMLOdsInputNumericElement;
+    };
     interface HTMLOdsInputTextElement extends Components.OdsInputText, HTMLStencilElement {
     }
     var HTMLOdsInputTextElement: {
@@ -123,6 +133,7 @@ declare global {
         "ods-data": HTMLOdsDataElement;
         "ods-foot": HTMLOdsFootElement;
         "ods-header": HTMLOdsHeaderElement;
+        "ods-input-numeric": HTMLOdsInputNumericElement;
         "ods-input-text": HTMLOdsInputTextElement;
         "ods-row": HTMLOdsRowElement;
         "ods-table": HTMLOdsTableElement;
@@ -160,6 +171,10 @@ declare namespace LocalJSX {
     }
     interface OdsHeader {
     }
+    interface OdsInputNumeric {
+        "class"?: string;
+        "headless"?: boolean;
+    }
     interface OdsInputText {
         "class"?: string;
         "headless"?: boolean;
@@ -181,6 +196,7 @@ declare namespace LocalJSX {
         "ods-data": OdsData;
         "ods-foot": OdsFoot;
         "ods-header": OdsHeader;
+        "ods-input-numeric": OdsInputNumeric;
         "ods-input-text": OdsInputText;
         "ods-row": OdsRow;
         "ods-table": OdsTable;
@@ -198,6 +214,7 @@ declare module "@stencil/core" {
             "ods-data": LocalJSX.OdsData & JSXBase.HTMLAttributes<HTMLOdsDataElement>;
             "ods-foot": LocalJSX.OdsFoot & JSXBase.HTMLAttributes<HTMLOdsFootElement>;
             "ods-header": LocalJSX.OdsHeader & JSXBase.HTMLAttributes<HTMLOdsHeaderElement>;
+            "ods-input-numeric": LocalJSX.OdsInputNumeric & JSXBase.HTMLAttributes<HTMLOdsInputNumericElement>;
             "ods-input-text": LocalJSX.OdsInputText & JSXBase.HTMLAttributes<HTMLOdsInputTextElement>;
             "ods-row": LocalJSX.OdsRow & JSXBase.HTMLAttributes<HTMLOdsRowElement>;
             "ods-table": LocalJSX.OdsTable & JSXBase.HTMLAttributes<HTMLOdsTableElement>;
