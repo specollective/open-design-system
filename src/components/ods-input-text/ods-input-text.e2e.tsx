@@ -1,15 +1,15 @@
 import { h } from '@stencil/core';
 import { newE2EPage } from '@stencil/core/testing';
 
-describe('ods-input-numeric', () => {
+describe('ods-input-text', () => {
   it('has rendered correctly', async () => {
     const page = await newE2EPage();
 
     await page.setContent(`
-      <ods-input-numeric>
-      </ods-input-numeric>
+      <ods-input-text>
+      </ods-input-text>
     `);
-    const elm = await page.find('ods-input-numeric');
+    const elm = await page.find('ods-input-text');
     expect(elm).toEqualText(``);
   });
 
@@ -17,12 +17,12 @@ describe('ods-input-numeric', () => {
     const page = await newE2EPage();
 
     await page.setContent(`
-      <ods-input-numeric class="custom-class">
-      </ods-input-numeric>
+      <ods-input-text class="custom-class">
+      </ods-input-text>
     `);
 
-    const element = await page.find('ods-input-numeric');
-    const customClass = await page.find('ods-input-numeric >>> .custom-class');
+    const element = await page.find('ods-input-text');
+    const customClass = await page.find('ods-input-text >>> .custom-class');
     await page.waitForChanges();
 
     expect(element).toHaveClass('custom-class');
@@ -37,13 +37,13 @@ describe('ods-input-numeric', () => {
     };
     const baseClass = "base-class"
     await page.setContent(`
-      <ods-input-numeric class="${baseClass}">
-      </ods-input-numeric>
+      <ods-input-text class="${baseClass}">
+      </ods-input-text>
     `);
-    const numeric = await page.find('ods-input-numeric');
+    const text = await page.find('ods-input-text');
     const base = await page.find('.base-class');
 
-    await page.$eval('ods-input-numeric',
+    await page.$eval('ods-input-text',
       (element: any, { className, headless }) => {
         const baseClass = "base-class"
         element.headless = headless;
@@ -57,9 +57,9 @@ describe('ods-input-numeric', () => {
     );
     const hydro = "hydrated"
     await page.waitForChanges();
-    expect(numeric).toHaveClass('base-class');
-    expect(numeric).not.toHaveClass(`${hydro}custom-class`);
-    expect(numeric).not.toHaveClass(`third-class`);
+    expect(text).toHaveClass('base-class');
+    expect(text).not.toHaveClass(`${hydro}custom-class`);
+    expect(text).not.toHaveClass(`third-class`);
     expect(base).not.toBeNull();
   });
 
@@ -71,14 +71,14 @@ describe('ods-input-numeric', () => {
     };
     const baseClass = "base-class"
     await page.setContent(`
-      <ods-input-numeric class="${baseClass}">
-      </ods-input-numeric>
+      <ods-input-text class="${baseClass}">
+      </ods-input-text>
     `);
-    const numeric = await page.find('ods-input-numeric');
+    const text = await page.find('ods-input-text');
     const base = await page.find('.base-class');
 
 
-    await page.$eval('ods-input-numeric',
+    await page.$eval('ods-input-text',
       (element: any, { className, headless }) => {
         const baseClass = "base-class"
         element.headless = headless;
@@ -91,10 +91,9 @@ describe('ods-input-numeric', () => {
     );
     const hydrated = "hydrated"
     await page.waitForChanges();
-    expect(numeric).toHaveClass('base-class');
-    expect(numeric).toHaveClass(`${hydrated}custom-class`);
-    expect(numeric).toHaveClass(`third-class`);
+    expect(text).toHaveClass('base-class');
+    expect(text).toHaveClass(`${hydrated}custom-class`);
+    expect(text).toHaveClass(`third-class`);
     expect(base).not.toBeNull();
   });
-
 });
