@@ -75,7 +75,6 @@ describe('ods-input-numeric', () => {
       </ods-input-numeric>
     `);
     const numeric = await page.find('ods-input-numeric');
-    // const thead = await page.find('ods-thead');
     const base = await page.find('.base-class');
 
 
@@ -96,8 +95,6 @@ describe('ods-input-numeric', () => {
     expect(numeric).toHaveClass(`${hydrated}custom-class`);
     expect(numeric).toHaveClass(`third-class`);
     expect(base).not.toBeNull();
-    // expect(thead).not.toHaveClass('custom-class');
-    // expect(thead).not.toHaveClass('test-class');
   });
 
 });
