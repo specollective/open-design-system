@@ -1,45 +1,42 @@
 import { h } from '@stencil/core';
 import { newE2EPage } from '@stencil/core/testing';
 
-describe('ods-body', () => {
-  it('rendered ods-body correctly', async () => {
+describe('ods-header', () => {
+  it('rendered ods-header correctly', async () => {
     const page = await newE2EPage();
 
     await page.setContent(`
       <ods-table>
-        <ods-body>
+        <ods-header>
             Person 1
-        </ods-body>
+        </ods-header>
       </ods-table>
     `);
 
-    const body = await page.find('ods-body');
-    expect(body).not.toBeNull();
-    expect(body).toEqualText(`Person 1`);
+    const header = await page.find('ods-header');
+    expect(header).not.toBeNull();
+    expect(header).toEqualText(`Person 1`);
   });
-
   it('assigned the appropriate class', async () => {
 
     const page = await newE2EPage();
-    const bodyClass = 'body-class'
+    const headerClass = 'header-class'
 
     await page.setContent(`
       <ods-table>
-          <ods-body class="${bodyClass}">
-            <ods-row>Person 1</ods-row>
-            <ods-row>Person 2</ods-row>
-            <ods-row>Person 3</ods-row>
-          </ods-body>
+          <ods-header class="${headerClass}">
+            Person 1
+          </ods-header>
       </ods-table>
     `);
 
-    const body = await page.find('ods-body');
-    const bodyBaseClass = await page.find('.body-class');
+    const header = await page.find('ods-header');
+    const headerBaseClass = await page.find('.header-class');
     await page.waitForChanges();
 
-    expect(body).not.toBeNull();
-    expect(body).toHaveClass('body-class');
-    expect(bodyBaseClass).not.toBeNull();
+    expect(header).not.toBeNull();
+    expect(header).toHaveClass('header-class');
+    expect(headerBaseClass).not.toBeNull();
   });
 
   it('base-class is the only rendered class', async () => {
@@ -52,19 +49,17 @@ describe('ods-body', () => {
 
     await page.setContent(`
       <ods-table>
-        <ods-body class="${baseClass}">
-          <ods-header>Person 1</ods-header>
-          <ods-header>Person 2</ods-header>
-          <ods-header>Person 3</ods-header>
-        </ods-body>
+        <ods-header class="${baseClass}">
+          Person 1
+        </ods-header>
       </ods-table>
     `);
 
-    const body = await page.find('ods-body');
-    const bodyBaseClass = await page.find('.base-class');
+    const header = await page.find('ods-header');
+    const headerBaseClass = await page.find('.base-class');
     const hydrated = "hydrated"
 
-    await page.$eval('ods-body',
+    await page.$eval('ods-header',
       (element: any, { className, headless }) => {
         const baseClass = "base-class"
         element.headless = headless;
@@ -76,10 +71,10 @@ describe('ods-body', () => {
     );
 
     await page.waitForChanges();
-    expect(body).not.toBeNull();
-    expect(body).toHaveClass('base-class');
-    expect(body).not.toHaveClasses([`${hydrated}custom-class`, `third-class`]);
-    expect(bodyBaseClass).not.toBeNull();
+    expect(header).not.toBeNull();
+    expect(header).toHaveClass('base-class');
+    expect(header).not.toHaveClasses([`${hydrated}custom-class`, `third-class`]);
+    expect(headerBaseClass).not.toBeNull();
   });
 
   it('base && custom class are both rendered', async () => {
@@ -92,18 +87,16 @@ describe('ods-body', () => {
 
     await page.setContent(`
       <ods-table>
-        <ods-body class="${baseClass}">
-          <ods-header>Person 1</ods-header>
-          <ods-header>Person 2</ods-header>
-          <ods-header>Person 3</ods-header>
-        </ods-body>
+        <ods-header class="${baseClass}">
+          Person 1
+        </ods-header>
       </ods-table>
     `);
 
     const base = await page.find('.base-class');
-    const body = await page.find('ods-body');
+    const header = await page.find('ods-header');
 
-    await page.$eval('ods-body',
+    await page.$eval('ods-header',
       (element: any, { className, headless }) => {
         const baseClass = "base-class"
         element.headless = headless;
@@ -116,9 +109,9 @@ describe('ods-body', () => {
 
     const hydrated = "hydrated"
     await page.waitForChanges();
-    expect(body).not.toBeNull();
-    expect(body).toHaveClass('base-class');
-    expect(body).toHaveClasses([`${hydrated}custom-class`, "third-class"]);
+    expect(header).not.toBeNull();
+    expect(header).toHaveClass('base-class');
+    expect(header).toHaveClasses([`${hydrated}custom-class`, "third-class"]);
     expect(base).not.toBeNull();
   });
 
@@ -141,20 +134,20 @@ describe('ods-body', () => {
 
     await page.setContent(`
       <ods-table>
-        <ods-body class="${baseClass}">
+        <ods-header class="${baseClass}">
           <ods-button class="${clickStatus}" onClick="${handleClick()}">
             ${btnMessage}
           </ods-button>
-        </ods-body>
+        </ods-header>
       </ods-table>
     `);
 
     const hydrated = "hydrated"
-    const body = await page.find('ods-body');
+    const header = await page.find('ods-header');
     const base = await page.find('.base-class');
     const btn = await page.find('ods-button');
 
-    await page.$eval('ods-body',
+    await page.$eval('ods-header',
       (element: any, { className, headless }) => {
         const baseClass = "base-class"
         element.headless = headless;
@@ -166,9 +159,9 @@ describe('ods-body', () => {
     );
 
     await page.waitForChanges();
-    expect(body).not.toBeNull();
-    expect(body).toHaveClass('base-class');
-    expect(body).toHaveClasses([`${hydrated}custom-class`, "third-class"]);
+    expect(header).not.toBeNull();
+    expect(header).toHaveClass('base-class');
+    expect(header).toHaveClasses([`${hydrated}custom-class`, "third-class"]);
     expect(base).not.toBeNull();
     expect(btn).toHaveClass(clickStatus);
     expect(btnMessage).toEqualText("On");
