@@ -10,12 +10,6 @@ export class ODSInputText {
   @Prop() headless: boolean;
   @State() value: string;
 
-  handleSubmit(e) {
-    e.preventDefault()
-    console.log(this.value);
-    // send data to our backend
-  }
-
   render() {
     const defaultClass = 'ods-input-text-default'
     const currentClass = this.headless
