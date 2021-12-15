@@ -29,19 +29,3 @@ jobs:
         run: npm run build
       - name: Test
         run: npm run test
-
-      - name: Build and Test Success
-        run: |
-          echo "::set-output name=mix-test::$(cat test.log)"
-        id: build_and_test_success
-        env:
-          MIX_ENV: test
-          PGHOST: localhost
-          PGUSER: postgres
-
-      - name: Slack Notification
-        uses: rtCamp/action-slack-notify@v2
-        env:
-          SLACK_MESSAGE: ${{join(steps.build_and_test_success.outputs.*, '\n')}}
-          SLACK_TITLE: Test Results
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBOOK }}
