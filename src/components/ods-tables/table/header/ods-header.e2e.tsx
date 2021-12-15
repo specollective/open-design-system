@@ -49,7 +49,7 @@ describe('ods-header', () => {
 
     await page.setContent(`
       <ods-table>
-        < class="${baseClass}">
+        <ods-header class="${baseClass}">
           Person 1
         </ods-header>
       </ods-table>
