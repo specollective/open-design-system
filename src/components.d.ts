@@ -32,6 +32,10 @@ export namespace Components {
     }
     interface OdsFoot {
     }
+    interface OdsFormBasic {
+        "class": string;
+        "headless": boolean;
+    }
     interface OdsHeader {
     }
     interface OdsInputNumeric {
@@ -84,6 +88,12 @@ declare global {
         prototype: HTMLOdsFootElement;
         new (): HTMLOdsFootElement;
     };
+    interface HTMLOdsFormBasicElement extends Components.OdsFormBasic, HTMLStencilElement {
+    }
+    var HTMLOdsFormBasicElement: {
+        prototype: HTMLOdsFormBasicElement;
+        new (): HTMLOdsFormBasicElement;
+    };
     interface HTMLOdsHeaderElement extends Components.OdsHeader, HTMLStencilElement {
     }
     var HTMLOdsHeaderElement: {
@@ -132,6 +142,7 @@ declare global {
         "ods-body": HTMLOdsBodyElement;
         "ods-data": HTMLOdsDataElement;
         "ods-foot": HTMLOdsFootElement;
+        "ods-form-basic": HTMLOdsFormBasicElement;
         "ods-header": HTMLOdsHeaderElement;
         "ods-input-numeric": HTMLOdsInputNumericElement;
         "ods-input-text": HTMLOdsInputTextElement;
@@ -169,6 +180,10 @@ declare namespace LocalJSX {
     }
     interface OdsFoot {
     }
+    interface OdsFormBasic {
+        "class"?: string;
+        "headless"?: boolean;
+    }
     interface OdsHeader {
     }
     interface OdsInputNumeric {
@@ -195,6 +210,7 @@ declare namespace LocalJSX {
         "ods-body": OdsBody;
         "ods-data": OdsData;
         "ods-foot": OdsFoot;
+        "ods-form-basic": OdsFormBasic;
         "ods-header": OdsHeader;
         "ods-input-numeric": OdsInputNumeric;
         "ods-input-text": OdsInputText;
@@ -213,6 +229,7 @@ declare module "@stencil/core" {
             "ods-body": LocalJSX.OdsBody & JSXBase.HTMLAttributes<HTMLOdsBodyElement>;
             "ods-data": LocalJSX.OdsData & JSXBase.HTMLAttributes<HTMLOdsDataElement>;
             "ods-foot": LocalJSX.OdsFoot & JSXBase.HTMLAttributes<HTMLOdsFootElement>;
+            "ods-form-basic": LocalJSX.OdsFormBasic & JSXBase.HTMLAttributes<HTMLOdsFormBasicElement>;
             "ods-header": LocalJSX.OdsHeader & JSXBase.HTMLAttributes<HTMLOdsHeaderElement>;
             "ods-input-numeric": LocalJSX.OdsInputNumeric & JSXBase.HTMLAttributes<HTMLOdsInputNumericElement>;
             "ods-input-text": LocalJSX.OdsInputText & JSXBase.HTMLAttributes<HTMLOdsInputTextElement>;
