@@ -38,4 +38,4 @@ jobs:
         env:
           SLACK_CHANNEL: ods-details
           SLACK_MESSAGE: 'Post Content'
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
