@@ -37,5 +37,6 @@ jobs:
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_CHANNEL: ods-details
-          SLACK_MESSAGE: 'Post Content'
+          SLACK_MESSAGE: '${{ github.event_name }} in ${{ github.repository }}'
+          SLACK_USERNAME: Non dev/main branch push
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
