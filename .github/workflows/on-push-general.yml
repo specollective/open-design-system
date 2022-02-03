@@ -33,7 +33,6 @@ jobs:
     name: General Push Notification
     runs-on: ubuntu-latest
     steps:
-      - uses: actions:/checkout@v2
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
         env:
